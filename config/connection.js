@@ -13,7 +13,15 @@ else{
     password : 'root', // Add your password
     database : 'burgers_db' // Add your database
   });
-}
+};
+
+connection.connect(function(err) {
+    if (err) {
+        console.error('error connecting: ' + err.stack);
+        return;
+    }
+    console.log('connected as id ' + connection.threadId);
+});
 
 
 // Export the Connection
